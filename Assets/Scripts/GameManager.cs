@@ -41,6 +41,13 @@ public class GameManager : MonoBehaviour
 	
 	[SerializeField] private Camera cam1, cam2;
 	
+	
+	void Start()
+	{
+		cam1.enabled = true;
+		cam2.enabled = false;
+	}
+	
 	public void SwitchCamera()
 	{
 		cam1.enabled = !cam1.enabled;
