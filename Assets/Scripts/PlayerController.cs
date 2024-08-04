@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public float moveSpeed;
-	float speedX, speedY;
-	Rigidbody2D rb;
+	public float MoveSpeed;
+	private float speedX, speedY;
+	private Rigidbody2D rb;
 	
 	void Start()
 	{
@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		
-		speedX = Input.GetAxis("Horizontal") * moveSpeed;
-		speedY = Input.GetAxis("Vertical") * moveSpeed;
+		speedX = Input.GetAxis("Horizontal") * MoveSpeed;
+		speedY = Input.GetAxis("Vertical") * MoveSpeed;
 		rb.velocity = new Vector2(speedX, speedY);
 		
 	}
