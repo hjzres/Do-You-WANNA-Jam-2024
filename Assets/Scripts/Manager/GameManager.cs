@@ -1,51 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-	private static GameManager _instance;
-	public static GameManager Instance
-	{
-		get
-		{
-			if (_instance == null)
-			{
-				_instance = GameObject.FindObjectOfType<GameManager>();
-				if (_instance == null)
-				{
-					GameObject container = new GameObject();
-					_instance = container.AddComponent<GameManager>();
-					_instance.name = typeof(GameManager).ToString() + " (Singleton)";
-				}
-			}
-			return _instance;
-		}
-	}
-	
-	void Awake()
-	{
-		if (_instance == null)
-		{
-			_instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
-		else
-		{
-			if (this != _instance)
-			{
-				Destroy(gameObject);
-			}
-		}
-	}
-	
 	public Camera Cam1, Cam2;
 	public Text State;
 	[SerializeField] private float rate;
 	private bool _inside = true;
 	
-	
-	void Start()
+	protected override void Awake()
 	{
+		base.Awake();
+		
 		Cam1.enabled = true;
 		Cam2.enabled = false;
 		InvokeRepeating("FlashText", rate, rate);
@@ -74,6 +40,6 @@ public class GameManager : MonoBehaviour
 	
 	private void FlashText()
 	{
-		State.gameObject.SetActive(!State.gameObject.active);
+		State.gameObject.SetActive(!State.gameObject.activeSelf);
 	}
 }
