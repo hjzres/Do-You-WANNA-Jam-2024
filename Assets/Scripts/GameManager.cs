@@ -38,4 +38,20 @@ public class GameManager : MonoBehaviour
 			}
 		}
 	}
+	
+	[SerializeField] private Camera cam1, cam2;
+	
+	public void SwitchCamera()
+	{
+		cam1.enabled = !cam1.enabled;
+		cam2.enabled = !cam2.enabled;
+	}
+	
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.C))
+		{
+			SwitchCamera();
+		}
+	}
 }
