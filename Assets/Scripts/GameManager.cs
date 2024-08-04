@@ -39,19 +39,19 @@ public class GameManager : MonoBehaviour
 		}
 	}
 	
-	[SerializeField] private Camera cam1, cam2;
+	public Camera Cam1, Cam2;
 	
 	
 	void Start()
 	{
-		cam1.enabled = true;
-		cam2.enabled = false;
+		Cam1.enabled = true;
+		Cam2.enabled = false;
 	}
 	
 	public void SwitchCamera()
 	{
-		cam1.enabled = !cam1.enabled;
-		cam2.enabled = !cam2.enabled;
+		Cam1.enabled = !Cam1.enabled;
+		Cam2.enabled = !Cam2.enabled;
 	}
 	
 	void Update()

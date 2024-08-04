@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904046df12997cc47acc33a2fc799d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam1: {fileID: 40941081}
-  cam2: {fileID: 1373954260}
+  Cam1: {fileID: 40941081}
+  Cam2: {fileID: 1373954260}
 --- !u!4 &885972876
 Transform:
   m_ObjectHideFlags: 0
@@ -503,6 +503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
+  player: 2
+  gameManager: {fileID: 885972875}
 --- !u!50 &1463341740
 Rigidbody2D:
   serializedVersion: 4
@@ -693,6 +695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
+  player: 1
+  gameManager: {fileID: 885972875}
 --- !u!50 &1766492265
 Rigidbody2D:
   serializedVersion: 4
