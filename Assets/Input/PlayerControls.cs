@@ -37,6 +37,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""SwitchRole"",
+                    ""type"": ""Button"",
+                    ""id"": ""61169caa-47f6-4f6b-b298-8dd6ee53534c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""eaf86c0a-dbc1-4851-ac57-7721f420e4a0"",
@@ -132,6 +141,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fae4c4bf-fa11-4a4d-a39a-21af3e26668c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -143,6 +163,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""MoveCamera"",
                     ""type"": ""Button"",
                     ""id"": ""84033743-64c6-4f26-aa5e-c5e9b2827780"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchRole"",
+                    ""type"": ""Button"",
+                    ""id"": ""5eb6a766-8719-4584-aa43-3c53d73313d8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -244,6 +273,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""467a94da-de2f-417b-96c4-d9aab2123509"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -253,11 +293,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Patient
         m_Patient = asset.FindActionMap("Patient", throwIfNotFound: true);
         m_Patient_MoveCharacter = m_Patient.FindAction("MoveCharacter", throwIfNotFound: true);
+        m_Patient_SwitchRole = m_Patient.FindAction("SwitchRole", throwIfNotFound: true);
         m_Patient_Interact = m_Patient.FindAction("Interact", throwIfNotFound: true);
         m_Patient_PauseGame = m_Patient.FindAction("PauseGame", throwIfNotFound: true);
         // Watcher
         m_Watcher = asset.FindActionMap("Watcher", throwIfNotFound: true);
         m_Watcher_MoveCamera = m_Watcher.FindAction("MoveCamera", throwIfNotFound: true);
+        m_Watcher_SwitchRole = m_Watcher.FindAction("SwitchRole", throwIfNotFound: true);
         m_Watcher_ChangeCamera = m_Watcher.FindAction("ChangeCamera", throwIfNotFound: true);
         m_Watcher_PauseGame = m_Watcher.FindAction("PauseGame", throwIfNotFound: true);
     }
@@ -322,6 +364,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Patient;
     private List<IPatientActions> m_PatientActionsCallbackInterfaces = new List<IPatientActions>();
     private readonly InputAction m_Patient_MoveCharacter;
+    private readonly InputAction m_Patient_SwitchRole;
     private readonly InputAction m_Patient_Interact;
     private readonly InputAction m_Patient_PauseGame;
     public struct PatientActions
@@ -329,6 +372,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         private @PlayerControls m_Wrapper;
         public PatientActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveCharacter => m_Wrapper.m_Patient_MoveCharacter;
+        public InputAction @SwitchRole => m_Wrapper.m_Patient_SwitchRole;
         public InputAction @Interact => m_Wrapper.m_Patient_Interact;
         public InputAction @PauseGame => m_Wrapper.m_Patient_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_Patient; }
@@ -343,6 +387,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @MoveCharacter.started += instance.OnMoveCharacter;
             @MoveCharacter.performed += instance.OnMoveCharacter;
             @MoveCharacter.canceled += instance.OnMoveCharacter;
+            @SwitchRole.started += instance.OnSwitchRole;
+            @SwitchRole.performed += instance.OnSwitchRole;
+            @SwitchRole.canceled += instance.OnSwitchRole;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
@@ -356,6 +403,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @MoveCharacter.started -= instance.OnMoveCharacter;
             @MoveCharacter.performed -= instance.OnMoveCharacter;
             @MoveCharacter.canceled -= instance.OnMoveCharacter;
+            @SwitchRole.started -= instance.OnSwitchRole;
+            @SwitchRole.performed -= instance.OnSwitchRole;
+            @SwitchRole.canceled -= instance.OnSwitchRole;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
@@ -384,6 +434,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Watcher;
     private List<IWatcherActions> m_WatcherActionsCallbackInterfaces = new List<IWatcherActions>();
     private readonly InputAction m_Watcher_MoveCamera;
+    private readonly InputAction m_Watcher_SwitchRole;
     private readonly InputAction m_Watcher_ChangeCamera;
     private readonly InputAction m_Watcher_PauseGame;
     public struct WatcherActions
@@ -391,6 +442,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         private @PlayerControls m_Wrapper;
         public WatcherActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveCamera => m_Wrapper.m_Watcher_MoveCamera;
+        public InputAction @SwitchRole => m_Wrapper.m_Watcher_SwitchRole;
         public InputAction @ChangeCamera => m_Wrapper.m_Watcher_ChangeCamera;
         public InputAction @PauseGame => m_Wrapper.m_Watcher_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_Watcher; }
@@ -405,6 +457,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @MoveCamera.started += instance.OnMoveCamera;
             @MoveCamera.performed += instance.OnMoveCamera;
             @MoveCamera.canceled += instance.OnMoveCamera;
+            @SwitchRole.started += instance.OnSwitchRole;
+            @SwitchRole.performed += instance.OnSwitchRole;
+            @SwitchRole.canceled += instance.OnSwitchRole;
             @ChangeCamera.started += instance.OnChangeCamera;
             @ChangeCamera.performed += instance.OnChangeCamera;
             @ChangeCamera.canceled += instance.OnChangeCamera;
@@ -418,6 +473,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @MoveCamera.started -= instance.OnMoveCamera;
             @MoveCamera.performed -= instance.OnMoveCamera;
             @MoveCamera.canceled -= instance.OnMoveCamera;
+            @SwitchRole.started -= instance.OnSwitchRole;
+            @SwitchRole.performed -= instance.OnSwitchRole;
+            @SwitchRole.canceled -= instance.OnSwitchRole;
             @ChangeCamera.started -= instance.OnChangeCamera;
             @ChangeCamera.performed -= instance.OnChangeCamera;
             @ChangeCamera.canceled -= instance.OnChangeCamera;
@@ -444,12 +502,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IPatientActions
     {
         void OnMoveCharacter(InputAction.CallbackContext context);
+        void OnSwitchRole(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
     }
     public interface IWatcherActions
     {
         void OnMoveCamera(InputAction.CallbackContext context);
+        void OnSwitchRole(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
     }

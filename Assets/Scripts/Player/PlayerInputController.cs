@@ -10,7 +10,8 @@ public class PlayerInputController : Singleton<PlayerInputController>
     private PlayerControls.WatcherActions watcherActions;
 
     public Action<Vector2> OnMoveCharacter, OnMoveCamera;
-    public Action OnInteract, OnChangeCamera, OnPauseGame;
+    public Action OnInteract, OnChangeCamera;
+    public Action OnSwitchRole, OnPauseGame;
 
     protected override void Awake() {
         base.Awake();
@@ -23,6 +24,8 @@ public class PlayerInputController : Singleton<PlayerInputController>
         patientActions.MoveCharacter.performed += x => OnMoveCharacter?.Invoke(x.ReadValue<Vector2>());
         patientActions.MoveCharacter.canceled += x => OnMoveCharacter?.Invoke(Vector2.zero);
 
+        patientActions.SwitchRole.started += x => OnSwitchRole?.Invoke();
+
         patientActions.Interact.started += x => OnInteract?.Invoke();
 
         patientActions.PauseGame.started += x => OnPauseGame?.Invoke();
@@ -31,6 +34,8 @@ public class PlayerInputController : Singleton<PlayerInputController>
 
         watcherActions.MoveCamera.performed += x => OnMoveCamera?.Invoke(x.ReadValue<Vector2>());
         watcherActions.MoveCamera.canceled += x => OnMoveCamera?.Invoke(Vector2.zero);
+
+        watcherActions.SwitchRole.started += x => OnSwitchRole?.Invoke();
 
         watcherActions.ChangeCamera.performed += x => OnChangeCamera?.Invoke();
 
@@ -43,6 +48,8 @@ public class PlayerInputController : Singleton<PlayerInputController>
 
         patientActions.Interact.started -= x => OnInteract?.Invoke();
 
+        patientActions.SwitchRole.started -= x => OnSwitchRole?.Invoke();
+
         patientActions.PauseGame.started -= x => OnPauseGame?.Invoke();
 
         // //
@@ -51,6 +58,8 @@ public class PlayerInputController : Singleton<PlayerInputController>
         watcherActions.MoveCamera.canceled -= x => OnMoveCamera?.Invoke(Vector2.zero);
 
         watcherActions.ChangeCamera.performed -= x => OnChangeCamera?.Invoke();
+
+        watcherActions.SwitchRole.started -= x => OnSwitchRole?.Invoke();
 
         watcherActions.PauseGame.started -= x => OnPauseGame?.Invoke();
     }
