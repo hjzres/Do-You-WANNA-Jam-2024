@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class GuardMovement : MonoBehaviour
 	{
 		Vector2 direction = (positions[i] - (Vector2)transform.position).normalized;
 		_rb.velocity = direction * speed;
+		transform.up = direction;
 		if(Vector2.Distance(transform.position, positions[i]) < 0.1f)
 		{
 			if(turning)
