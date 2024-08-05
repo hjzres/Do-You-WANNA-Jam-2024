@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 563195548}
   - component: {fileID: 563195547}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: InOrOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 1463341740}
   - component: {fileID: 1463341739}
   m_Layer: 0
-  m_Name: Player_OUT
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,7 +1073,7 @@ GameObject:
   - component: {fileID: 1508569894}
   - component: {fileID: 1508569898}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: GuardView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1603,7 +1603,7 @@ GameObject:
   - component: {fileID: 1766492266}
   - component: {fileID: 1766492264}
   m_Layer: 0
-  m_Name: Player_IN
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

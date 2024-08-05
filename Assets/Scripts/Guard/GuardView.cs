@@ -10,7 +10,7 @@ public class GuardView : MonoBehaviour
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			Debug.Log("Gotcha!");
+			GameManager.Instance.RestartLevel();
 		}
 	}
 }

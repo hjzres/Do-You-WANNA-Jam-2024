@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Test/hjzr.unity
+    guid: 4d705eb3bbdd7bb4a995e01fbe4d8731
   m_configObjects: {}
