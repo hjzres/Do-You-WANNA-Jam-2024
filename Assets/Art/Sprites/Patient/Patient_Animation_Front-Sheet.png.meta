@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6cf6331337c014d15ae9ac0dcdd6a09e
+guid: d26eed7bc326b4c94b712f469d350218
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Patient_Animation_LeftFacing-Sheet_0
+      name: Patient_Animation_Front-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b6ee54c6f6943d58c2b5292b76824d
-      internalID: -1440462841
+      spriteID: deff5e062264849ce850c145b302fe21
+      internalID: 1887064470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patient_Animation_LeftFacing-Sheet_1
+      name: Patient_Animation_Front-Sheet_1
       rect:
         serializedVersion: 2
         x: 28
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c33b87eeb34b4354b525da24bc81a3c
-      internalID: -268120938
+      spriteID: f5d3a18427df84b7a89d69ef76b6b09a
+      internalID: -1052566372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patient_Animation_LeftFacing-Sheet_2
+      name: Patient_Animation_Front-Sheet_2
       rect:
         serializedVersion: 2
         x: 56
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1730683322534e71ba4523872e0d839
-      internalID: -55758230
+      spriteID: 0816f964bba2c4c049b107d44d10183b
+      internalID: 1279060667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patient_Animation_LeftFacing-Sheet_3
+      name: Patient_Animation_Front-Sheet_3
       rect:
         serializedVersion: 2
         x: 84
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83d9aee4915bf4cfa9cd21c7dc5f03cb
-      internalID: 1918087078
+      spriteID: 6b7f177e68a4541a284f4700b9523ecf
+      internalID: -923380855
       vertices: []
       indices: 
       edges: []
@@ -196,7 +196,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ab80a3d63412845cd92e39862f45a0ef
+    spriteID: 67b81b315fa10490784255b6e1893d14
     internalID: 0
     vertices: []
     indices: 
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Patient_Animation_LeftFacing-Sheet_0: -1440462841
-      Patient_Animation_LeftFacing-Sheet_1: -268120938
-      Patient_Animation_LeftFacing-Sheet_2: -55758230
-      Patient_Animation_LeftFacing-Sheet_3: 1918087078
+      Patient_Animation_Front-Sheet_0: 1887064470
+      Patient_Animation_Front-Sheet_1: -1052566372
+      Patient_Animation_Front-Sheet_2: 1279060667
+      Patient_Animation_Front-Sheet_3: -923380855
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

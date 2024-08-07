@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eaaeea8aabffe41bb99cd3524e8a77ad
+guid: 58191f26345684ba69dea7c8b8d262da
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,10 +45,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Patient_Animation_Behind-Sheet_0
+      name: Guard_Animation_RightFacing-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10668973bbe3c4c44aea6648d52bd335
-      internalID: -980607985
+      spriteID: 2def91b4a0d2e467eb4a5ad52453b2c5
+      internalID: 1572559428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patient_Animation_Behind-Sheet_1
+      name: Guard_Animation_RightFacing-Sheet_1
       rect:
         serializedVersion: 2
         x: 28
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19a37f464f6574fefb362fea005ba8d2
-      internalID: -1169611742
+      spriteID: 45db645dd6f944f3fbfd0064e55ff5bf
+      internalID: -1506277252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patient_Animation_Behind-Sheet_2
+      name: Guard_Animation_RightFacing-Sheet_2
       rect:
         serializedVersion: 2
         x: 56
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de61167e1b6f94b6a817dc1d085c1f94
-      internalID: -153004374
+      spriteID: a856c418c18bb4935af44d2dbc470251
+      internalID: 267839628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patient_Animation_Behind-Sheet_3
+      name: Guard_Animation_RightFacing-Sheet_3
       rect:
         serializedVersion: 2
         x: 84
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 276fbe68c112c41c0b1b3a8c93ee433c
-      internalID: -425413713
+      spriteID: 9df77ae0e0bbf4e7eb371726aa83fbca
+      internalID: 696684375
       vertices: []
       indices: 
       edges: []
@@ -196,7 +196,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ce29506fd0a5b46188a2c3f121dda920
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Patient_Animation_Behind-Sheet_0: -980607985
-      Patient_Animation_Behind-Sheet_1: -1169611742
-      Patient_Animation_Behind-Sheet_2: -153004374
-      Patient_Animation_Behind-Sheet_3: -425413713
+      Guard_Animation_RightFacing-Sheet_0: 1572559428
+      Guard_Animation_RightFacing-Sheet_1: -1506277252
+      Guard_Animation_RightFacing-Sheet_2: 267839628
+      Guard_Animation_RightFacing-Sheet_3: 696684375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
