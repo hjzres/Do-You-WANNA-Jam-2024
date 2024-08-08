@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4218609990117866181}
   - component: {fileID: 5329346390457029821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tiles_Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 1284200245144561123}
   - component: {fileID: 635221211578807076}
   - component: {fileID: 1119345884899666825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 168390667928541440}
   - component: {fileID: 7992579707253754080}
   - component: {fileID: 166032676296016774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 4708278698317463790}
   - component: {fileID: 5977503285985519121}
   - component: {fileID: 5791989417729019733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 9087927727790631650}
   - component: {fileID: 1164691816033068444}
   - component: {fileID: 2815576953671777128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flooring
   m_TagString: Untagged
   m_Icon: {fileID: 0}

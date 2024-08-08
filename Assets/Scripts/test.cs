@@ -7,8 +7,8 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerInputController.Instance.OnMoveCamera += MoveCamera;
-        PlayerInputController.Instance.SwitchActionMap();
+        PlayerInputReader.Instance.OnMoveCamera += MoveCamera;
+        PlayerInputReader.Instance.SwitchActionMap();
     }
 
     private void MoveCamera(Vector2 val) {

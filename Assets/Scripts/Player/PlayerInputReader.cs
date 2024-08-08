@@ -4,7 +4,7 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputController : Singleton<PlayerInputController>
+public class PlayerInputReader : Singleton<PlayerInputReader>
 {
     private PlayerControls _playerControls;
     private PlayerControls.PatientActions _patientActions;
