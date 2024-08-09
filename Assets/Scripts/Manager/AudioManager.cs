@@ -11,15 +11,15 @@ public class AudioManager : Singleton<AudioManager>
         public string Name;
         public AudioClip Clip;
 
-        [Range(0.0f, 1.0f)] public float Volume;
-        [Range(0.1f, 3.0f)] public float Pitch;
+        [Range(0.0f, 1.0f)] public float Volume = 1;
+        [Range(0.1f, 3.0f)] public float Pitch = 1;
         public bool Loop;
 
         [HideInInspector] public AudioSource Source;
     }
 
-    [SerializeField] private List<Sound> soundEffects;
     [SerializeField] private List<Sound> soundtracks;
+    [SerializeField] private List<Sound> soundEffects;
     public string CurrentSoundtrack;
 
     protected override void Awake()

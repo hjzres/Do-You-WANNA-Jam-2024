@@ -8,7 +8,6 @@ public class test : MonoBehaviour
     void Start()
     {
         PlayerInputReader.Instance.OnMoveCamera += MoveCamera;
-        PlayerInputReader.Instance.SwitchActionMap();
     }
 
     private void MoveCamera(Vector2 val) {

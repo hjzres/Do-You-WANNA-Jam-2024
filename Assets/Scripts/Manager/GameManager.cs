@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -42,4 +44,26 @@ public class GameManager : Singleton<GameManager>
 	{
 		State.gameObject.SetActive(!State.gameObject.activeSelf);
 	}
+
+	public void LoadScene(int sceneIndex) => StartCoroutine(LoadSceneAsync(sceneIndex));
+ 
+    public void LoadScene(string sceneName) => StartCoroutine(LoadSceneAsync(sceneName));
+    
+    public void ReloadScene() => LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    private IEnumerator LoadSceneAsync(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!asyncLoad.isDone)
+            yield return null;
+    }
+
+    private IEnumerator LoadSceneAsync(int sceneIndex)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
+
+        while (!asyncLoad.isDone)
+            yield return null;
+    }	
 }

@@ -22,6 +22,13 @@ public class PatientController : MonoBehaviour
         _playerInputReader.OnSwitchRole += ProcessSwitchRole;
     }
 
+    private void OnDisable() {
+        _playerInputReader.OnMoveCharacter -= ProcessMoveCharacter;
+        _playerInputReader.OnInteract -= ProcessInteract;
+        _playerInputReader.OnPauseGame -= ProcessPauseGame;
+        _playerInputReader.OnSwitchRole -= ProcessSwitchRole;
+    }
+
     private void ProcessMoveCharacter(Vector2 vector) {
 
         _rigidbody2D.velocity = vector * moveSpeed;
@@ -64,9 +71,9 @@ public class PatientController : MonoBehaviour
     {
         throw new NotImplementedException();
     }
-    private void ProcessSwitchRole()
+    private void ProcessSwitchRole(string origin)
     {
-        throw new NotImplementedException();
+        _playerInputReader.SwitchActionMap(origin);
     }
 
     private void ProcessPauseGame()
