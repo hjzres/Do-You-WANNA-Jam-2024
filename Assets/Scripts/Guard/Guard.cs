@@ -1,7 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
 public class Guard : MonoBehaviour
@@ -12,12 +9,13 @@ public class Guard : MonoBehaviour
 		Alerted
 	}
 	[SerializeField] private SpriteAnimator spriteAnimator;
+	[SerializeField] private GuardVision vision;
 	[SerializeField] private Transform[] pathPoints;
 	private Queue<Transform> pathQueue = new Queue<Transform>();
 	private Transform nextPoint;
 	[SerializeField] private Rigidbody2D rb2D;
-	[Range(0.5f, 3)] [SerializeField] private float moveSpeed = 1;
-	[Range(3, 5)] [SerializeField] private float idleWaitTime = 3;
+	[Range(0.5f, 3)][SerializeField] private float moveSpeed = 1;
+	[Range(0, 5)][SerializeField] private float idleWaitTime = 3;
 	
 	private Behavior behavior = Behavior.Idle;
 	
@@ -40,24 +38,32 @@ public class Guard : MonoBehaviour
 
         switch (vector)
         {
-            case Vector2 behind when vector.y > 0:
+            case Vector2 behind when vector.y > 0 && vector.y > vector.x:
                 newAnimState = "Walking_Behind";
 				behavior = Behavior.Moving;
+
+				vision.transform.localRotation = Quaternion.Euler(0, 0, 90);
             break;
 
-            case Vector2 front when vector.y < 0:
+            case Vector2 front when vector.y < 0 && vector.y < vector.x:
                 newAnimState = "Walking_Front";
 				behavior = Behavior.Moving;
+
+				vision.transform.localRotation = Quaternion.Euler(0, 0, 270);
             break;
 
-            case Vector2 left when vector.x < 0:
+            case Vector2 left when vector.x < 0 && vector.x < vector.y:
                 newAnimState = "Walking_Left";
 				behavior = Behavior.Moving;
+
+				vision.transform.localRotation = Quaternion.Euler(0, 0, 180);
             break;
 
-            case Vector2 right when vector.x > 0:
+            case Vector2 right when vector.x > 0 && vector.x > vector.y:
                 newAnimState = "Walking_Right";
 				behavior = Behavior.Moving;
+
+				vision.transform.localRotation = Quaternion.Euler(0, 0, 0);
             break;
         }
 
@@ -66,7 +72,7 @@ public class Guard : MonoBehaviour
 	}
 	
 	private void FixedUpdate() {
-		if(transform.position == nextPoint.position)
+		if(Vector2.Distance(transform.position, nextPoint.position) < 0.1f)
 		{
 			pathQueue.Enqueue(nextPoint);
 			nextPoint = pathQueue.Dequeue();
@@ -78,8 +84,14 @@ public class Guard : MonoBehaviour
 			spriteAnimator.Animator.SetBool("isMoving", false);
 
 			Invoke(nameof(MoveToNextPosition), idleWaitTime);
-		}	
+		} 
 	}
+
+	public void Alert() {
+		rb2D.velocity = Vector2.zero;
+		behavior = Behavior.Alerted;
+	}
+
 	// void Update()
 	// {
 	// 	Vector2 direction = (positions[i] - (Vector2)transform.position).normalized;

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 1505463050495415289}
   - component: {fileID: 525744508557245057}
   - component: {fileID: 2813872109671690890}
+  - component: {fileID: 6324486552273096344}
   m_Layer: 10
   m_Name: VirtualCamera_CVC
   m_TagString: Untagged
@@ -163,6 +164,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6324486552273096344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739565696935149182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 0}
+  m_Damping: 0
+  m_MaxWindowSize: 0
 --- !u!1 &5136342441999934048
 GameObject:
   m_ObjectHideFlags: 0

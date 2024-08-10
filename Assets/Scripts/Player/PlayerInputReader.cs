@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputReader : Singleton<PlayerInputReader>
 {
-    private PlayerControls _playerControls;
-    private PlayerControls.PatientActions _patientActions;
-    private PlayerControls.WatcherActions _watcherActions;
+    public PlayerControls PlayerControls { get; private set; }
+    public PlayerControls.PatientActions PatientActions { get; private set; }
+    public PlayerControls.WatcherActions WatcherActions { get; private set; }
 
     public Action<Vector2> OnMoveCharacter, OnMoveCamera;
     public Action OnInteract, OnChangeCamera, OnPauseGame;
@@ -19,67 +19,77 @@ public class PlayerInputReader : Singleton<PlayerInputReader>
     protected override void Awake() {
         base.Awake();
 
-        _playerControls = new PlayerControls();
-        _patientActions = _playerControls.Patient;
-        _watcherActions = _playerControls.Watcher;
+        PlayerControls = new PlayerControls();
+        PatientActions = PlayerControls.Patient;
+        WatcherActions = PlayerControls.Watcher;
 
-        _patientActions.Enable();
-        _watcherActions.Disable();
+        PatientActions.Enable();
+        WatcherActions.Disable();
     }
     
     private void OnEnable() {
-        _patientActions.MoveCharacter.performed += x => OnMoveCharacter?.Invoke(x.ReadValue<Vector2>());
-        _patientActions.MoveCharacter.canceled += x => OnMoveCharacter?.Invoke(Vector2.zero);
+        PatientActions.MoveCharacter.performed += x => OnMoveCharacter?.Invoke(x.ReadValue<Vector2>());
+        PatientActions.MoveCharacter.canceled += x => OnMoveCharacter?.Invoke(Vector2.zero);
 
-        _patientActions.SwitchRole.started += x => OnSwitchRole?.Invoke(PATIENT_ORIGIN);
+        PatientActions.SwitchRole.started += x => OnSwitchRole?.Invoke(PATIENT_ORIGIN);
 
-        _patientActions.Interact.started += x => OnInteract?.Invoke();
+        PatientActions.Interact.started += x => OnInteract?.Invoke();
 
-        _patientActions.PauseGame.started += x => OnPauseGame?.Invoke();
+        PatientActions.PauseGame.started += x => OnPauseGame?.Invoke();
 
         // //
 
-        _watcherActions.MoveCamera.performed += x => OnMoveCamera?.Invoke(x.ReadValue<Vector2>());
-        _watcherActions.MoveCamera.canceled += x => OnMoveCamera?.Invoke(Vector2.zero);
+        WatcherActions.MoveCamera.performed += x => OnMoveCamera?.Invoke(x.ReadValue<Vector2>());
+        WatcherActions.MoveCamera.canceled += x => OnMoveCamera?.Invoke(Vector2.zero);
 
-        _watcherActions.SwitchRole.started += x => OnSwitchRole?.Invoke(WATCHER_ORIGIN);
+        WatcherActions.SwitchRole.started += x => OnSwitchRole?.Invoke(WATCHER_ORIGIN);
 
-        _watcherActions.ChangeCamera.performed += x => OnChangeCamera?.Invoke();
+        WatcherActions.ChangeCamera.performed += x => OnChangeCamera?.Invoke();
 
-        _watcherActions.PauseGame.started += x => OnPauseGame?.Invoke();
+        WatcherActions.PauseGame.started += x => OnPauseGame?.Invoke();
     }
 
     private void OnDisable() {
-        _patientActions.MoveCharacter.performed -= x => OnMoveCharacter?.Invoke(x.ReadValue<Vector2>());
-        _patientActions.MoveCharacter.canceled -= x => OnMoveCharacter?.Invoke(Vector2.zero);
+        PatientActions.MoveCharacter.performed -= x => OnMoveCharacter?.Invoke(x.ReadValue<Vector2>());
+        PatientActions.MoveCharacter.canceled -= x => OnMoveCharacter?.Invoke(Vector2.zero);
 
-        _patientActions.Interact.started -= x => OnInteract?.Invoke();
+        PatientActions.Interact.started -= x => OnInteract?.Invoke();
 
-        _patientActions.SwitchRole.started -= x => OnSwitchRole?.Invoke(PATIENT_ORIGIN);
+        PatientActions.SwitchRole.started -= x => OnSwitchRole?.Invoke(PATIENT_ORIGIN);
 
-        _patientActions.PauseGame.started -= x => OnPauseGame?.Invoke();
+        PatientActions.PauseGame.started -= x => OnPauseGame?.Invoke();
 
         // //
 
-        _watcherActions.MoveCamera.performed -= x => OnMoveCamera?.Invoke(x.ReadValue<Vector2>());
-        _watcherActions.MoveCamera.canceled -= x => OnMoveCamera?.Invoke(Vector2.zero);
+        WatcherActions.MoveCamera.performed -= x => OnMoveCamera?.Invoke(x.ReadValue<Vector2>());
+        WatcherActions.MoveCamera.canceled -= x => OnMoveCamera?.Invoke(Vector2.zero);
 
-        _watcherActions.ChangeCamera.performed -= x => OnChangeCamera?.Invoke();
+        WatcherActions.ChangeCamera.performed -= x => OnChangeCamera?.Invoke();
 
-        _watcherActions.SwitchRole.started -= x => OnSwitchRole?.Invoke(WATCHER_ORIGIN);
+        WatcherActions.SwitchRole.started -= x => OnSwitchRole?.Invoke(WATCHER_ORIGIN);
 
-        _watcherActions.PauseGame.started -= x => OnPauseGame?.Invoke();
+        WatcherActions.PauseGame.started -= x => OnPauseGame?.Invoke();
+    }
+
+    public void Initialize() {
+        PatientActions.Enable();
+        WatcherActions.Disable();
+    }
+
+    public void Deinitialize() {
+        PatientActions.Disable();
+        WatcherActions.Disable();
     }
 
     public void SwitchActionMap(string origin) 
     {
         if(origin == PATIENT_ORIGIN) {
-            _patientActions.Disable();
-            _watcherActions.Enable();
+            PatientActions.Disable();
+            WatcherActions.Enable();
 
         } else {
-            _patientActions.Enable();
-            _watcherActions.Disable();
+            PatientActions.Enable();
+            WatcherActions.Disable();
         }
     }
 

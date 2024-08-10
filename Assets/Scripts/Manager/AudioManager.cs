@@ -43,14 +43,16 @@ public class AudioManager : Singleton<AudioManager>
             sound.Source.pitch = sound.Pitch;
             sound.Source.loop = sound.Loop;
         }
+
+        PlaySoundtrack(CurrentSoundtrack);
     }
 
-    public void PlaySoundtracks (string newSoundtrack)
+    public void PlaySoundtrack (string newSoundtrack)
     {
         Sound soundtrack = soundtracks.Find(track => track.Name == newSoundtrack);
 
         //Stop the same soundtrack from restarting itself
-        if (soundtrack == null || CurrentSoundtrack == newSoundtrack)
+        if (soundtrack == null || soundtrack.Source.isPlaying)
             return;
 
         foreach (Sound track in soundtracks)

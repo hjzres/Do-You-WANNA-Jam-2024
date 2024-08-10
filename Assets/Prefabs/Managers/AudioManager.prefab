@@ -44,7 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ff7a71a97024594ad11d16f31f7e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtracks: []
+  soundtracks:
+  - Name: MainMenu
+    Clip: {fileID: 8300000, guid: a41040e0d99fd4f2394586e9ba8e9198, type: 3}
+    Volume: 0.3
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: LevelTheme1
+    Clip: {fileID: 8300000, guid: fbf9ffb3072224786903c99eb5de6210, type: 3}
+    Volume: 0.3
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: LevelTheme2
+    Clip: {fileID: 8300000, guid: 355d0e34b8c874065b24f33a5879285c, type: 3}
+    Volume: 0.3
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
   soundEffects:
   - Name: ButtonClick
     Clip: {fileID: 8300000, guid: 46a08513da39340e1a6c476cd1df87ab, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PatientController : MonoBehaviour
 {
     [SerializeField] private SpriteAnimator spriteAnimator;
-    [Range(1f, 3f)][SerializeField] private float moveSpeed = 1;
+    [Range(1f, 10f)][SerializeField] private float moveSpeed = 1;
     private Rigidbody2D _rigidbody2D;
     private PlayerInputReader _playerInputReader;
 
@@ -17,6 +17,7 @@ public class PatientController : MonoBehaviour
 
     private void Start() {
         _playerInputReader = PlayerInputReader.Instance;
+        _playerInputReader.Initialize();
 
         _playerInputReader.OnMoveCharacter += ProcessMoveCharacter;
         _playerInputReader.OnInteract += ProcessInteract;

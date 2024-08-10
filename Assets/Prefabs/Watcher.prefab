@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ce50e841a3346898eec81a8a3a0536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
   activeCamera: {fileID: 0}
   securityCameras: []
 --- !u!1001 &5608152916082306561

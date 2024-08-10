@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEditor;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -50,6 +51,14 @@ public class GameManager : Singleton<GameManager>
     public void LoadScene(string sceneName) => StartCoroutine(LoadSceneAsync(sceneName));
     
     public void ReloadScene() => LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    public void QuitGame() {
+        #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {

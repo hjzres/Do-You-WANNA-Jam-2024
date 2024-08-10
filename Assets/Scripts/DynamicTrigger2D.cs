@@ -4,17 +4,10 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class DynamicTrigger2D : MonoBehaviour
 {
-    [SerializeField] protected BoxCollider2D boxCollider2D;
     [SerializeField] protected UnityEvent EnterEvent;
     [SerializeField] protected UnityEvent ExitEvent;
-
-    protected virtual void Awake() {
-        boxCollider2D = GetComponent<BoxCollider2D>();
-        boxCollider2D.isTrigger = true;
-    }
     
     protected virtual void OnTriggerEnter2D (Collider2D other) 
     {
@@ -38,5 +31,11 @@ public class DynamicTrigger2D : MonoBehaviour
     public void LoadScene(int sceneIndex) => GameManager.Instance.LoadScene(sceneIndex);
 
     public void LoadScene(string sceneName) => GameManager.Instance.LoadScene(sceneName);
+
+    public void ReloadScene() => GameManager.Instance.ReloadScene();
+
+    public void PlaySoundtrack(string newSoundtrack) => AudioManager.Instance.PlaySoundtrack(newSoundtrack);
+
+    public void PlaySoundEffect(string newSoundEffect) => AudioManager.Instance.PlaySoundEffect(newSoundEffect);
 
 }

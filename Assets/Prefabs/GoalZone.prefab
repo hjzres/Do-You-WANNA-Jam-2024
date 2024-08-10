@@ -63,7 +63,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a681f1b1cbef47bda0300d5e05331dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider2D: {fileID: 3473073091583956183}
   EnterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -112,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90710f5f9bb64cf29098efc0c360948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider2D: {fileID: 3473073091583956183}
   EnterEvent:
     m_PersistentCalls:
       m_Calls:

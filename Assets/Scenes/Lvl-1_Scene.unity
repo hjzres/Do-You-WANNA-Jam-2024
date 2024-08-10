@@ -4026,6 +4026,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1477784073}
     - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: newSoundtrack
+      value: LevelTheme1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
       propertyPath: nextSceneName
       value: Lvl-2_Scene
       objectReference: {fileID: 0}
@@ -4090,7 +4094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90710f5f9bb64cf29098efc0c360948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider2D: {fileID: 0}
   EnterEvent:
     m_PersistentCalls:
       m_Calls:

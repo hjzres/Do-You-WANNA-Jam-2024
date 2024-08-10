@@ -200,6 +200,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: newSoundtrack
+      value: LevelTheme2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
       propertyPath: nextSceneName
       value: Lvl-3_Scene
       objectReference: {fileID: 0}
@@ -573,11 +577,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 49945066661687795, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 49945066661687795, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 49945066661687795, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
       propertyPath: m_LocalPosition.z
@@ -678,7 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2306049516090273808, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
       propertyPath: moveSpeed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6758295234905109062, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -742,18 +746,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 525744508557245057, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 525744508557245057, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
-      propertyPath: m_LookAt
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1047375260918182691, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
-      propertyPath: m_BoundingShape2D
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1739565696935149182, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
       propertyPath: m_Name
       value: VirtualCamera_CVC
@@ -762,6 +754,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1687271590}
+    - target: {fileID: 6324486552273096344, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 959118627}
     - target: {fileID: 6343285310582481338, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -805,31 +801,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1739565696935149182, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1700116168}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
---- !u!1 &1700116161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1739565696935149182, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
-  m_PrefabInstance: {fileID: 1700116160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1700116168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700116161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 959118627}
-  m_Damping: 0
-  m_MaxWindowSize: 0
 --- !u!1001 &2091916166
 PrefabInstance:
   m_ObjectHideFlags: 0
