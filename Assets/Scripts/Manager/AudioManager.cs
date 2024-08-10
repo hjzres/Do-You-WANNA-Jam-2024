@@ -65,10 +65,16 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySoundEffect (string newSoundEffect)
     {
-        Sound soundEffect = soundEffects.Find(effect => effect.Name == newSoundEffect);
+        List<Sound> effects = soundEffects.FindAll(effect => effect.Name.Contains(newSoundEffect));
+        int randomIndex = 0;
+        Sound soundEffect;
 
-        if (soundEffect == null)
+        if(effects.Count > 1) {
+            randomIndex = UnityEngine.Random.Range(0, effects.Count);
+            soundEffect = effects[randomIndex];
+        } else {
             return;
+        }
 
         //Play the sound effect
         soundEffect.Source.Play();

@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1360591523637499311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813024529700588255}
+  - component: {fileID: 1355766359762249418}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813024529700588255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360591523637499311}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355766359762249418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360591523637499311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ff7a71a97024594ad11d16f31f7e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundtracks: []
+  soundEffects:
+  - Name: ButtonClick
+    Clip: {fileID: 8300000, guid: 46a08513da39340e1a6c476cd1df87ab, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: DoorOpen0
+    Clip: {fileID: 8300000, guid: cdae3f787ae534a3f8397c7ae23153b5, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: DoorOpen1
+    Clip: {fileID: 8300000, guid: 700fa34f6b1864d3a90c25c829c91cb8, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: DoorUnlock
+    Clip: {fileID: 8300000, guid: 7a0749750a3b2405fa3143313f50c349, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Footstep0
+    Clip: {fileID: 8300000, guid: 697d29d1e95bf4e5c9eb76b32903a7fd, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Footstep1
+    Clip: {fileID: 8300000, guid: 95d348c22bcce40a6b0cf57c887a39d0, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Footstep2
+    Clip: {fileID: 8300000, guid: 79b0b752040804038bea65237a1a6e21, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Footstep3
+    Clip: {fileID: 8300000, guid: 03b3047eeabe04d6d9f9ca6437a56fd5, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Lever
+    Clip: {fileID: 8300000, guid: 0e3a8dac915d14ecf825953d0aff34d6, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: LoseLevel
+    Clip: {fileID: 8300000, guid: d24ca0885f0ff4f8bad02dc7b657de28, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: PushingBlock
+    Clip: {fileID: 8300000, guid: 8b58bc43eefd541799de029879c08ada, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: WinLevel
+    Clip: {fileID: 8300000, guid: 56d838b9642d44e05ae4f97fa1513046, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  CurrentSoundtrack: 

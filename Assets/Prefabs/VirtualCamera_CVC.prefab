@@ -95,7 +95,7 @@ MonoBehaviour:
   axis: 1
   virtualCamera: {fileID: 525744508557245057}
   rb2D: {fileID: 2813872109671690890}
-  cameraUI: {fileID: 0}
+  cameraUI: {fileID: 2802986934779331243}
 --- !u!114 &525744508557245057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +259,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8891e3ad827704b8a9792076434d52d5, type: 3}
+--- !u!223 &2802986934779331243 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4274229907712673484, guid: 8891e3ad827704b8a9792076434d52d5, type: 3}
+  m_PrefabInstance: {fileID: 2141224886969156711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6954382568437798259 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9022335858663133460, guid: 8891e3ad827704b8a9792076434d52d5, type: 3}

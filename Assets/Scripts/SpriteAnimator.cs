@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpriteAnimator : MonoBehaviour
+public class SpriteAnimator : MonoBehaviour, ISoundPlayer
 {
     [SerializeField] private Animator animator;
     public Animator Animator => animator;
@@ -27,5 +27,12 @@ public class SpriteAnimator : MonoBehaviour
 
         //Play the animation
         animator.Play(newAnimState);
+    }
+
+    public void PlaySoundEffect(string soundEffectName) => AudioManager.Instance.PlaySoundEffect(soundEffectName);
+
+    public void PlaySoundtrack(string soundtrackName)
+    {
+        throw new System.NotImplementedException();
     }
 }
