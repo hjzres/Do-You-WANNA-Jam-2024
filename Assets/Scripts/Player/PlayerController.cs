@@ -14,15 +14,15 @@ public class PlayerController : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 	}
 	
-	void Update()
-	{
-		if((player == Player.Player1 && gameManager.Cam1.enabled) || (player == Player.Player2 && gameManager.Cam2.enabled))
-		{
-			Move();
-		} else {
-			Freeze();
-		}
-	}
+	// void Update()
+	// {
+	// 	if((player == Player.Player1 && gameManager.Cam1.enabled) || (player == Player.Player2 && gameManager.Cam2.enabled))
+	// 	{
+	// 		Move();
+	// 	} else {
+	// 		Freeze();
+	// 	}
+	// }
 	
 	enum Player
 	{

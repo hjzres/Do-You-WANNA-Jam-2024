@@ -12,10 +12,10 @@ TagManager:
   - Water
   - UI
   - Tilemap
-  - 
-  - 
-  - 
-  - 
+  - Camera Vision
+  - Player
+  - Virtual Camera
+  - Camera Confiner
   - 
   - 
   - 

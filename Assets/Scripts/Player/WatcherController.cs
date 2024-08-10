@@ -34,6 +34,7 @@ public class WatcherController : MonoBehaviour
     private void ProcessMoveCamera(Vector2 vector)
     {
         activeCamera.Rb2D.velocity = vector * moveSpeed;
+        activeCamera.transform.position = activeCamera.VirtualCamera.State.CorrectedPosition;
     }
 
     private void ProcessChangeCamera()

@@ -7,7 +7,9 @@ public class PatientController : MonoBehaviour
     [Range(1f, 3f)][SerializeField] private float moveSpeed = 1;
     private Rigidbody2D _rigidbody2D;
     private PlayerInputReader _playerInputReader;
-    
+
+    [SerializeField] private IInteractable interactable;
+    [SerializeField] private bool nearInteractable = false;
 
     private void Awake() {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -69,8 +71,10 @@ public class PatientController : MonoBehaviour
 
     private void ProcessInteract()
     {
-        throw new NotImplementedException();
+        if (nearInteractable && interactable != null)
+            interactable.Interact();
     }
+
     private void ProcessSwitchRole(string origin)
     {
         _playerInputReader.SwitchActionMap(origin);
@@ -81,5 +85,24 @@ public class PatientController : MonoBehaviour
         throw new NotImplementedException();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.TryGetComponent(out IInteractable interactable))
+        {
+            this.interactable = interactable;
+            nearInteractable = true;
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.TryGetComponent(out IInteractable interactable))
+        {
+            if(interactable == this.interactable)
+            {
+                this.interactable = null;
+                nearInteractable = false;
+            }
+        }
+    }
 }

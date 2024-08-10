@@ -1,25 +1,32 @@
 using UnityEngine;
 
-public class GoalZone : DynamicTrigger2D, IInteractable2D<string>
+public class GoalZone : DynamicTrigger2D, IInteractable
 {
-    protected bool canInteract = false;
+    [SerializeField] private string nextSceneName;
+    [SerializeField] private bool canInteract = false;
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("CameraVision"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Camera Vision"))
             canInteract = true;
     }
 
+    // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if(other.gameObject.layer == LayerMask.NameToLayer("CameraVision"))
+    //         canInteract = true;
+    // }
+
     protected override void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("CameraVision"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Camera Vision"))
             canInteract = false;
     }
 
-    public void Interact(string sceneName)
+    public void Interact()
     {
         if (canInteract)
-            LoadScene(sceneName);
+            LoadScene(nextSceneName);
         else
             return;
     }
