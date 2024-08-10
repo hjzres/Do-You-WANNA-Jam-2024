@@ -7,7 +7,7 @@ public class PeekCameraIndicator : MonoBehaviour
     public Camera peekCamera;               // Reference to the peek camera
     public RectTransform arrowIndicator;    // UI element for the arrow indicator
     public Image peekCameraImage;        // UI element to display the peek camera's RenderTexture
-    [Range(1, 2)] public float arrowRadius = 1.5f;         // Distance from the center of the RawImage
+    public float arrowRadius = 50f;         // Distance from the center of the RawImage
 
     private void Start()
     {
@@ -22,13 +22,9 @@ public class PeekCameraIndicator : MonoBehaviour
         bool isOffScreen = screenPos.x < 0 || screenPos.x > 1 || screenPos.y < 0 || screenPos.y > 1;
 
         if (isOffScreen)
-        {
             ShowPeekCamera(screenPos);
-        }
         else
-        {
             HidePeekCamera();
-        }
     }
 
     private void ShowPeekCamera(Vector3 screenPos)
@@ -55,12 +51,6 @@ public class PeekCameraIndicator : MonoBehaviour
         // Ensure the peek camera is active and set to follow the fighter
         peekCamera.gameObject.SetActive(true);
         peekCamera.transform.position = new Vector3(transform.position.x, transform.position.y, peekCamera.transform.position.z);
-
-        // // Assign the RenderTexture to the RawImage
-        // if (peekCamera.targetTexture != null)
-        // {
-        //     peekCameraImage.texture = peekCamera.targetTexture;
-        // }
     }
 
     private void HidePeekCamera()
@@ -70,5 +60,6 @@ public class PeekCameraIndicator : MonoBehaviour
         peekCameraImage.gameObject.SetActive(false);
     }
 }
+
 
 

@@ -11,12 +11,6 @@ public class GoalZone : DynamicTrigger2D, IInteractable
             canInteract = true;
     }
 
-    // private void OnTriggerStay2D(Collider2D other)
-    // {
-    //     if(other.gameObject.layer == LayerMask.NameToLayer("CameraVision"))
-    //         canInteract = true;
-    // }
-
     protected override void OnTriggerExit2D(Collider2D other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Camera Vision"))

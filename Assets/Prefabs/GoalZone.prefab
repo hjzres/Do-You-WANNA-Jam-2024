@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7250318949905842570
+--- !u!1 &5453624550614267869
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8296776987392934529}
-  - component: {fileID: 3228228238995622904}
-  - component: {fileID: 7807569447657221387}
+  - component: {fileID: 8290261656370021716}
+  - component: {fileID: 3473073091583956183}
+  - component: {fileID: 5378633333832335904}
+  - component: {fileID: 1863303142522475218}
   m_Layer: 0
   m_Name: GoalZone
   m_TagString: Untagged
@@ -18,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8296776987392934529
+--- !u!4 &8290261656370021716
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7250318949905842570}
+  m_GameObject: {fileID: 5453624550614267869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3228228238995622904
+--- !u!61 &3473073091583956183
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7250318949905842570}
+  m_GameObject: {fileID: 5453624550614267869}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -78,26 +79,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7807569447657221387
+--- !u!114 &5378633333832335904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7250318949905842570}
+  m_GameObject: {fileID: 5453624550614267869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5abb2437942a44fb92b54f5d62221b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a681f1b1cbef47bda0300d5e05331dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider2D: {fileID: 0}
+  boxCollider2D: {fileID: 3473073091583956183}
+  EnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSceneName: 
+  canInteract: 0
+--- !u!114 &1863303142522475218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453624550614267869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90710f5f9bb64cf29098efc0c360948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider2D: {fileID: 3473073091583956183}
   EnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7807569447657221387}
-        m_TargetAssemblyTypeName: DynamicTrigger2D, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1863303142522475218}
+        m_TargetAssemblyTypeName: HelperZone, Assembly-CSharp
+        m_MethodName: SetActiveStatus
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -108,4 +130,18 @@ MonoBehaviour:
         m_CallState: 2
   ExitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1863303142522475218}
+        m_TargetAssemblyTypeName: HelperZone, Assembly-CSharp
+        m_MethodName: SetActiveStatus
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  helperObject: {fileID: 0}
+  isActive: 0
