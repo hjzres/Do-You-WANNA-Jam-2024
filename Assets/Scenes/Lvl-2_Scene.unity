@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 1378788188}
   - component: {fileID: 1378788187}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: Camera_RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 1420440077}
   - component: {fileID: 1420440076}
   m_Layer: 5
-  m_Name: Peek
+  m_Name: PeekCamera_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,6 +920,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 798645476}
+  - {fileID: 2279175389928862754}
   m_Father: {fileID: 2027238245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -940,7 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22352941, g: 0.007843138, b: 0.16078432, a: 1}
+  m_Color: {r: 0.5058824, g: 0.23137257, b: 0.43137258, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -986,6 +987,7 @@ MonoBehaviour:
   peekCamera: {fileID: 1186918574}
   arrowIndicator: {fileID: 2279175389928862754}
   peekCameraImage: {fileID: 1420440076}
+  arrowRadius: 1.5
 --- !u!1001 &1687271589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1266,7 +1268,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2279175389928862754}
   - {fileID: 1420440075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3980,18 +3981,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7627405466517332547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2027238245}
+  m_Father: {fileID: 1420440075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -27.381}
+  m_AnchoredPosition: {x: 24, y: 0}
   m_SizeDelta: {x: 16, y: 16}
-  m_Pivot: {x: 0.5, y: 0.28866667}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1839735485 &2625770692661408554
 Tilemap:
   m_ObjectHideFlags: 0
@@ -6226,7 +6227,7 @@ GameObject:
   - component: {fileID: 7627405466517332549}
   - component: {fileID: 7627405466517332548}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Pointer_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6252,7 +6253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 57d9b0f1736f64c06a75c40e5428070c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b74736864d7af04d907fe40b29dfe4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
