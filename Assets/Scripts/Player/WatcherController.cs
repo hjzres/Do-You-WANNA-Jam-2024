@@ -19,16 +19,20 @@ public class WatcherController : MonoBehaviour
         _playerInputReader.OnChangeCamera += ProcessChangeCamera;
         _playerInputReader.OnPauseGame += ProcessPauseGame;
         _playerInputReader.OnSwitchRole += ProcessSwitchRole;
+        _playerInputReader.OnRoleSwitchCompleted += ChangeController;
 
         securityCameras = FindObjectsByType<SecurityCamera>(FindObjectsSortMode.None).ToList();
         activeCamera = securityCameras[0];
+        activeCamera.CameraUI.gameObject.SetActive(false);
     }
+
 
     private void OnDisable() {
         _playerInputReader.OnMoveCamera -= ProcessMoveCamera;
         _playerInputReader.OnChangeCamera -= ProcessChangeCamera;
         _playerInputReader.OnPauseGame -= ProcessPauseGame;
         _playerInputReader.OnSwitchRole -= ProcessSwitchRole;
+        _playerInputReader.OnRoleSwitchCompleted -= ChangeController;
     }
 
     private void ProcessMoveCamera(Vector2 vector)
@@ -46,6 +50,14 @@ public class WatcherController : MonoBehaviour
     {
         _playerInputReader.SwitchActionMap(origin);
     }
+
+
+    private void ChangeController(string origin) 
+    {
+        activeCamera.CameraUI.gameObject.SetActive(origin != "Watcher");
+        //activeCamera.VisionBounds.gameObject.SetActive(origin != "Watcher");   
+    }
+    
 
     private void ProcessPauseGame()
     {

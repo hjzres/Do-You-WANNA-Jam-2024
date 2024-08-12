@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
-using Unity.IO.LowLevel.Unsafe;
-using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
 
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -20,6 +16,12 @@ public class SecurityCamera : MonoBehaviour
 
     [SerializeField] private Canvas cameraUI;
     public Canvas CameraUI => cameraUI;
+
+    [SerializeField] private BoxCollider2D visionBounds;
+    public BoxCollider2D VisionBounds => visionBounds;
+
+    [SerializeField] private PolygonCollider2D confinerBounds;
+    public PolygonCollider2D ConfinerBounds => confinerBounds;
 
     private void Awake() {
         if(virtualCamera == null)

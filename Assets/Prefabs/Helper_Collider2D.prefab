@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 1834910856780292832}
   - component: {fileID: 8298067297846982284}
   - component: {fileID: 2657472326910245342}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Helper_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90710f5f9bb64cf29098efc0c360948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider2D: {fileID: 0}
   EnterEvent:
     m_PersistentCalls:
       m_Calls:

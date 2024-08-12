@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEditor;
 
 [RequireComponent(typeof(Button))]
 [DisallowMultipleComponent]
@@ -42,12 +43,19 @@ public class DynamicButton : MonoBehaviour
 
     public void LoadScene(string sceneName) => GameManager.Instance.LoadScene(sceneName);
 
+    //public void LoadScene(SceneAsset sceneAsset) => GameManager.Instance.LoadScene(sceneAsset.name);
+
     public void ReloadScene() => GameManager.Instance.ReloadScene();
+
     public void QuitGame() => GameManager.Instance.QuitGame();
 
     public void PlaySoundtrack(string newSoundtrack) => AudioManager.Instance.PlaySoundtrack(newSoundtrack);
 
+    public void PlaySoundtrack(Soundtrack newSoundtrack) => AudioManager.Instance.PlaySoundtrack(newSoundtrack);
+
     public void PlaySoundEffect(string newSoundEffect) => AudioManager.Instance.PlaySoundEffect(newSoundEffect);
+    
+    public void PlaySoundEffect(SoundEffect newSoundEffect) => AudioManager.Instance.PlaySoundEffect(newSoundEffect);
 
     public void OnValidate()  {
         this.gameObject.name = ButtonName;

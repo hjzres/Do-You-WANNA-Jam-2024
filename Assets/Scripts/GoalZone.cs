@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GoalZone : DynamicTrigger2D, IInteractable
 {
-    [SerializeField] private string newSoundtrack, nextSceneName;
+    [SerializeField] private UnityEvent interactEvent;
     [SerializeField] private bool canInteract = false;
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -20,10 +21,6 @@ public class GoalZone : DynamicTrigger2D, IInteractable
     public void Interact()
     {
         if (canInteract)
-        {
-            LoadScene(nextSceneName);
-            PlaySoundtrack(newSoundtrack);
-        }
-
+            interactEvent?.Invoke();
     }
 }

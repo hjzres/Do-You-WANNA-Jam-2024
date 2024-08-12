@@ -97,7 +97,9 @@ MonoBehaviour:
   ExitEvent:
     m_PersistentCalls:
       m_Calls: []
-  nextSceneName: 
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls: []
   canInteract: 0
 --- !u!114 &1863303142522475218
 MonoBehaviour:
@@ -113,33 +115,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnterEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863303142522475218}
-        m_TargetAssemblyTypeName: HelperZone, Assembly-CSharp
-        m_MethodName: SetActiveStatus
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ExitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863303142522475218}
-        m_TargetAssemblyTypeName: HelperZone, Assembly-CSharp
-        m_MethodName: SetActiveStatus
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  helperType: 0
   helperObject: {fileID: 0}
   isActive: 0

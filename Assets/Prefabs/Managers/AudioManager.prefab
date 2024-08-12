@@ -45,95 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundtracks:
-  - Name: MainMenu
-    Clip: {fileID: 8300000, guid: a41040e0d99fd4f2394586e9ba8e9198, type: 3}
-    Volume: 0.3
-    Pitch: 1
-    Loop: 1
-    Source: {fileID: 0}
-  - Name: LevelTheme1
-    Clip: {fileID: 8300000, guid: fbf9ffb3072224786903c99eb5de6210, type: 3}
-    Volume: 0.3
-    Pitch: 1
-    Loop: 1
-    Source: {fileID: 0}
-  - Name: LevelTheme2
-    Clip: {fileID: 8300000, guid: 355d0e34b8c874065b24f33a5879285c, type: 3}
-    Volume: 0.3
-    Pitch: 1
-    Loop: 1
-    Source: {fileID: 0}
+  - {fileID: 11400000, guid: 4312b2b0a8bfb4754ba33337c32f02a6, type: 2}
+  - {fileID: 11400000, guid: 89588e1b0c7944fef954f0e6c87379e8, type: 2}
+  - {fileID: 11400000, guid: cbddebf002c3a4bbb8d2585f74d75eed, type: 2}
+  - {fileID: 11400000, guid: 28d8aa225a4234f1884d82be317519f9, type: 2}
   soundEffects:
-  - Name: ButtonClick
-    Clip: {fileID: 8300000, guid: 46a08513da39340e1a6c476cd1df87ab, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: DoorOpen0
-    Clip: {fileID: 8300000, guid: cdae3f787ae534a3f8397c7ae23153b5, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: DoorOpen1
-    Clip: {fileID: 8300000, guid: 700fa34f6b1864d3a90c25c829c91cb8, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: DoorUnlock
-    Clip: {fileID: 8300000, guid: 7a0749750a3b2405fa3143313f50c349, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: Footstep0
-    Clip: {fileID: 8300000, guid: 697d29d1e95bf4e5c9eb76b32903a7fd, type: 3}
-    Volume: 0.1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: Footstep1
-    Clip: {fileID: 8300000, guid: 95d348c22bcce40a6b0cf57c887a39d0, type: 3}
-    Volume: 0.1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: Footstep2
-    Clip: {fileID: 8300000, guid: 79b0b752040804038bea65237a1a6e21, type: 3}
-    Volume: 0.1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: Footstep3
-    Clip: {fileID: 8300000, guid: 03b3047eeabe04d6d9f9ca6437a56fd5, type: 3}
-    Volume: 0.1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: Lever
-    Clip: {fileID: 8300000, guid: 0e3a8dac915d14ecf825953d0aff34d6, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: LoseLevel
-    Clip: {fileID: 8300000, guid: d24ca0885f0ff4f8bad02dc7b657de28, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
-  - Name: PushingBlock
-    Clip: {fileID: 8300000, guid: 8b58bc43eefd541799de029879c08ada, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 1
-    Source: {fileID: 0}
-  - Name: WinLevel
-    Clip: {fileID: 8300000, guid: 56d838b9642d44e05ae4f97fa1513046, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
+  - {fileID: 11400000, guid: ffa6c5f27c9de423ba544cba1f18727d, type: 2}
+  - {fileID: 11400000, guid: df7fbd19f6e4d4d8481810aa7f9007e0, type: 2}
+  - {fileID: 11400000, guid: ee9efd42bef084168a116822d55af27b, type: 2}
+  - {fileID: 11400000, guid: db1dd346eb44e4fc1b6bfd2d39dc0236, type: 2}
+  - {fileID: 11400000, guid: 4fb016d353226421ea89d5a4e858273b, type: 2}
+  - {fileID: 11400000, guid: 584923ade9bc04f0a863064edd92ad9d, type: 2}
+  - {fileID: 11400000, guid: 57651597b9bd64daaa4169823f4f0629, type: 2}
+  - {fileID: 11400000, guid: 0bc5107a0b3aa4e44a0613a2d56447c4, type: 2}
+  startingSoundtrack: {fileID: 0}
   CurrentSoundtrack: 

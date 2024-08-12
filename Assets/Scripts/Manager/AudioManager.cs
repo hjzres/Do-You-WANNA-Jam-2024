@@ -5,57 +5,46 @@ using System.Collections.Generic;
 public class AudioManager : Singleton<AudioManager>
 {
 
-    [Serializable]
-    public class Sound
-    {
-        public string Name;
-        public AudioClip Clip;
+    [SerializeField] private List<Soundtrack> soundtracks;
+    [SerializeField] private List<SoundEffect> soundEffects;
 
-        [Range(0.0f, 1.0f)] public float Volume = 1;
-        [Range(0.1f, 3.0f)] public float Pitch = 1;
-        public bool Loop;
-
-        [HideInInspector] public AudioSource Source;
-    }
-
-    [SerializeField] private List<Sound> soundtracks;
-    [SerializeField] private List<Sound> soundEffects;
+    [SerializeField] private Soundtrack startingSoundtrack;
     public string CurrentSoundtrack;
 
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
 
-        foreach (Sound sound in soundEffects){
-            sound.Source = gameObject.AddComponent<AudioSource>();
-            sound.Source.clip = sound.Clip;
+        foreach (Soundtrack soundtrack in soundtracks){
+            soundtrack.Source = gameObject.AddComponent<AudioSource>();
+            soundtrack.Source.clip = soundtrack.Clip;
 
-            sound.Source.volume = sound.Volume;
-            sound.Source.pitch = sound.Pitch;
-            sound.Source.loop = sound.Loop;
+            soundtrack.Source.volume = soundtrack.Volume;
+            soundtrack.Source.pitch = soundtrack.Pitch;
+            soundtrack.Source.loop = soundtrack.Loop;
+        }
+        
+        foreach (SoundEffect soundEffect in soundEffects){
+            soundEffect.Source = gameObject.AddComponent<AudioSource>();
+            // set the audio source clip when we need to play a sound effect
+
+            soundEffect.Source.volume = soundEffect.Volume;
+            soundEffect.Source.pitch = soundEffect.Pitch;
+            soundEffect.Source.loop = soundEffect.Loop;
         }
 
-        foreach (Sound sound in soundtracks){
-            sound.Source = gameObject.AddComponent<AudioSource>();
-            sound.Source.clip = sound.Clip;
-
-            sound.Source.volume = sound.Volume;
-            sound.Source.pitch = sound.Pitch;
-            sound.Source.loop = sound.Loop;
-        }
-
-        PlaySoundtrack(CurrentSoundtrack);
+        if(startingSoundtrack != null)
+            PlaySoundtrack(startingSoundtrack);
     }
 
     public void PlaySoundtrack (string newSoundtrack)
     {
-        Sound soundtrack = soundtracks.Find(track => track.Name == newSoundtrack);
+        Soundtrack soundtrack = soundtracks.Find(track => track.Name == newSoundtrack);
 
         //Stop the same soundtrack from restarting itself
         if (soundtrack == null || soundtrack.Source.isPlaying)
             return;
 
-        foreach (Sound track in soundtracks)
+        foreach (Soundtrack track in soundtracks)
             track.Source.Stop();
 
         //Play the soundtrack
@@ -65,20 +54,46 @@ public class AudioManager : Singleton<AudioManager>
         CurrentSoundtrack = newSoundtrack;
     }
 
+    public void PlaySoundtrack (Soundtrack newSoundtrack)
+    {
+        //Stop the same soundtrack from restarting itself
+        if (newSoundtrack == null || newSoundtrack.Source.isPlaying)
+            return;
+
+        foreach (Soundtrack track in soundtracks)
+            track.Source.Stop();
+
+        //Play the soundtrack
+        newSoundtrack.Source.Play();
+
+        //Reassign the current soundtrack to the new soundtrack
+        CurrentSoundtrack = newSoundtrack.Name;
+    }
+
     public void PlaySoundEffect (string newSoundEffect)
     {
-        List<Sound> effects = soundEffects.FindAll(effect => effect.Name.Contains(newSoundEffect));
-        int randomIndex = 0;
-        Sound soundEffect;
+        SoundEffect soundEffect = soundEffects.Find(effect => effect.Name == newSoundEffect);
 
-        if(effects.Count > 1) {
-            randomIndex = UnityEngine.Random.Range(0, effects.Count);
-            soundEffect = effects[randomIndex];
-        } else {
+        if(soundEffect == null) 
             return;
-        }
+
+        int i = soundEffect.RandomIndex();
+        soundEffect.Source.clip = soundEffect.Clips[i];
 
         //Play the sound effect
         soundEffect.Source.Play();
+    }
+
+    public void PlaySoundEffect (SoundEffect newSoundEffect)
+    {
+
+        if(newSoundEffect == null) 
+            return;
+
+        int i = newSoundEffect.RandomIndex();
+        newSoundEffect.Source.clip = newSoundEffect.Clips[i];
+
+        //Play the sound effect
+        newSoundEffect.Source.Play();
     }
 }

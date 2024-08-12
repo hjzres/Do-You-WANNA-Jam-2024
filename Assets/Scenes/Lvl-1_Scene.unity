@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 121591198}
   - component: {fileID: 121591200}
   - component: {fileID: 121591199}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,14 +264,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1505463050495415289, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
+      propertyPath: axis
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1739565696935149182, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
       propertyPath: m_Name
       value: SecurityCamera_CVC
       objectReference: {fileID: 0}
+    - target: {fileID: 1739565696935149182, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2802986934779331243, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 888429376754138112}
+      objectReference: {fileID: 888429376754138113}
     - target: {fileID: 5136342441999934048, guid: 343895bc4437a41efa961f24672a3d06, type: 3}
       propertyPath: m_Name
       value: CameraVision_Collider2D
@@ -332,7 +340,7 @@ GameObject:
   - component: {fileID: 195032995}
   - component: {fileID: 195032997}
   - component: {fileID: 195032996}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: KeyboarrdKey_Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +473,7 @@ GameObject:
   - component: {fileID: 381786952}
   - component: {fileID: 381786954}
   - component: {fileID: 381786953}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +607,7 @@ GameObject:
   - component: {fileID: 1064927667}
   - component: {fileID: 1064927669}
   - component: {fileID: 1064927668}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +798,7 @@ GameObject:
   - component: {fileID: 1152072961}
   - component: {fileID: 1152072963}
   - component: {fileID: 1152072962}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: KeyboarrdKey_Image (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -871,7 +879,7 @@ GameObject:
   - component: {fileID: 1806678035}
   - component: {fileID: 1806678037}
   - component: {fileID: 1806678036}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: KeyboarrdKey_Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1035,7 @@ PrefabInstance:
     - target: {fileID: 2548665426367653165, guid: 68b14d3ea923e475d97455076100b458, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 888429376754138112}
+      objectReference: {fileID: 888429376754138113}
     - target: {fileID: 7861186366773969487, guid: 68b14d3ea923e475d97455076100b458, type: 3}
       propertyPath: m_Name
       value: PeekCamera_Canvas
@@ -1064,7 +1072,7 @@ GameObject:
   - component: {fileID: 2023261043}
   - component: {fileID: 2023261045}
   - component: {fileID: 2023261044}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,26 +1291,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 741396437731284559, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 741396437731284559, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 741396437731284559, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 741396437731284559, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462691881599453470, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9053a8c77e1e649d5aa43908997e7c56, type: 3}
     - target: {fileID: 2610538052261138815, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
       propertyPath: mainCamera
       value: 
@@ -1315,13 +1303,13 @@ PrefabInstance:
       propertyPath: peekCameraImage
       value: 
       objectReference: {fileID: 1819522424}
+    - target: {fileID: 5113262028099021695, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 888429376754138113}
     - target: {fileID: 9092742212580512154, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
       propertyPath: m_Name
       value: Patient
-      objectReference: {fileID: 0}
-    - target: {fileID: 9092742212580512154, guid: 0f1ed507bf6e74b42b7a02cbe9b7f836, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1427,7 +1415,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 888429376754138113}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1459,6 +1447,10 @@ PrefabInstance:
     - target: {fileID: 1814680268013460426, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
       propertyPath: m_Name
       value: Watcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758295234905109062, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6758295234905109062, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1512,6 +1504,11 @@ PrefabInstance:
 --- !u!20 &888429376754138112 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2701729341745711322, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
+  m_PrefabInstance: {fileID: 888429376754138111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &888429376754138113 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2335371926283526387, guid: efe8a43eb349b4c388e3e9cba37d36ea, type: 3}
   m_PrefabInstance: {fileID: 888429376754138111}
   m_PrefabAsset: {fileID: 0}
 --- !u!1839735485 &1164691816195282676
@@ -2606,7 +2603,7 @@ GameObject:
   - component: {fileID: 24432637098759180}
   - component: {fileID: 775628971739589959}
   - component: {fileID: 8502999388754366147}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: KeyboarrdKey_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3727,7 +3724,7 @@ GameObject:
   - component: {fileID: 8340823009976205220}
   - component: {fileID: 177489265989378153}
   - component: {fileID: 574436498175802280}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Key_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4027,11 +4024,103 @@ PrefabInstance:
       objectReference: {fileID: 1477784073}
     - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
       propertyPath: newSoundtrack
-      value: LevelTheme1
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 89588e1b0c7944fef954f0e6c87379e8, type: 2}
     - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
       propertyPath: nextSceneName
       value: Lvl-2_Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6232732723434826202}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6232732723434826202}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 6232732723434826202}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySoundtrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DynamicTrigger2D, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DynamicTrigger2D, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DynamicTrigger2D, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 89588e1b0c7944fef954f0e6c87379e8, type: 2}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 0bc5107a0b3aa4e44a0613a2d56447c4, type: 2}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Lvl-2_Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Soundtrack, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: SoundEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5453624550614267869, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
       propertyPath: m_Name
@@ -4082,6 +4171,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+--- !u!114 &6232732723434826202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5378633333832335904, guid: f3a1bbb20d253457e9592797626f2f6a, type: 3}
+  m_PrefabInstance: {fileID: 6232732723434826201}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a681f1b1cbef47bda0300d5e05331dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6233329666610294179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4124,6 +4224,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  helperType: 0
   helperObject: {fileID: 8484251122642800646}
   isActive: 0
 --- !u!1 &6278866034199752192
@@ -4158,7 +4259,7 @@ GameObject:
   - component: {fileID: 6348092290075106818}
   - component: {fileID: 6496700900800725979}
   - component: {fileID: 4149377839528159368}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HelperText_TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4376,6 +4477,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1355766359762249418, guid: c60a8b68ccc414822b6005d9d80d1d59, type: 3}
+      propertyPath: startingSoundtrack
+      value: 
+      objectReference: {fileID: 11400000, guid: 89588e1b0c7944fef954f0e6c87379e8, type: 2}
     - target: {fileID: 1360591523637499311, guid: c60a8b68ccc414822b6005d9d80d1d59, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -4476,7 +4581,7 @@ GameObject:
   - component: {fileID: 622788540482043021}
   - component: {fileID: 7132249824707766497}
   - component: {fileID: 3833480632954152883}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Helper_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4526,7 +4631,7 @@ GameObject:
   - component: {fileID: 4442658773220148662}
   - component: {fileID: 9127331740709947996}
   - component: {fileID: 9127331740709947995}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HelperText_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4619,9 +4724,9 @@ SceneRoots:
   - {fileID: 4218609989877025197}
   - {fileID: 1104116083}
   - {fileID: 197504796596224992}
-  - {fileID: 7938404908952292586}
   - {fileID: 888429376754138111}
+  - {fileID: 1819522422}
   - {fileID: 6232732723434826201}
   - {fileID: 6381683380967897789}
-  - {fileID: 1819522422}
+  - {fileID: 7938404908952292586}
   - {fileID: 5749044314013199550}

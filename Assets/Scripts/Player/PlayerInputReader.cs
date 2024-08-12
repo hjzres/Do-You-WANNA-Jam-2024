@@ -11,7 +11,7 @@ public class PlayerInputReader : Singleton<PlayerInputReader>
 
     public Action<Vector2> OnMoveCharacter, OnMoveCamera;
     public Action OnInteract, OnChangeCamera, OnPauseGame;
-    public Action<string> OnSwitchRole;
+    public Action<string> OnSwitchRole, OnRoleSwitchCompleted;
 
     public const string PATIENT_ORIGIN = "Patient";
     public const string WATCHER_ORIGIN = "Watcher";
@@ -91,6 +91,8 @@ public class PlayerInputReader : Singleton<PlayerInputReader>
             PatientActions.Enable();
             WatcherActions.Disable();
         }
+        
+        OnRoleSwitchCompleted?.Invoke(origin);
     }
 
     public void EnableAction(InputAction action) => action.Enable();

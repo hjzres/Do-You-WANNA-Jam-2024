@@ -11,6 +11,7 @@ public class GuardVision: DynamicTrigger2D
         popUpAlert.SetActive(true);
         
         parent.Alert();
+        AudioManager.Instance.PlaySoundEffect("LoseLevel");
         PlayerInputReader.Instance.Deinitialize();
 
         Invoke(nameof(ReloadScene), 3);

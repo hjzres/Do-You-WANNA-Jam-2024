@@ -38,28 +38,28 @@ public class Guard : MonoBehaviour
 
         switch (vector)
         {
-            case Vector2 behind when vector.y > 0 && vector.y > vector.x:
+            case Vector2 behind when vector.y > 0 && Mathf.Abs(vector.y) > Mathf.Abs(vector.x):
                 newAnimState = "Walking_Behind";
 				behavior = Behavior.Moving;
 
 				vision.transform.localRotation = Quaternion.Euler(0, 0, 90);
             break;
 
-            case Vector2 front when vector.y < 0 && vector.y < vector.x:
+            case Vector2 front when vector.y < 0 && Mathf.Abs(vector.y) > Mathf.Abs(vector.x):
                 newAnimState = "Walking_Front";
 				behavior = Behavior.Moving;
 
 				vision.transform.localRotation = Quaternion.Euler(0, 0, 270);
             break;
 
-            case Vector2 left when vector.x < 0 && vector.x < vector.y:
+            case Vector2 left when vector.x < 0 && Mathf.Abs(vector.x) > Mathf.Abs(vector.y):
                 newAnimState = "Walking_Left";
 				behavior = Behavior.Moving;
 
 				vision.transform.localRotation = Quaternion.Euler(0, 0, 180);
             break;
 
-            case Vector2 right when vector.x > 0 && vector.x > vector.y:
+            case Vector2 right when vector.x > 0 && Mathf.Abs(vector.x) > Mathf.Abs(vector.y):
                 newAnimState = "Walking_Right";
 				behavior = Behavior.Moving;
 

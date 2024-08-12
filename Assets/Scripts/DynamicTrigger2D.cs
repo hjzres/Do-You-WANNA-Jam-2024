@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,10 +30,18 @@ public class DynamicTrigger2D : MonoBehaviour
 
     public void LoadScene(string sceneName) => GameManager.Instance.LoadScene(sceneName);
 
+    //public void LoadScene(SceneAsset sceneAsset) => GameManager.Instance.LoadScene(sceneAsset.name);
+
     public void ReloadScene() => GameManager.Instance.ReloadScene();
+
+    public void QuitGame() => GameManager.Instance.QuitGame();
 
     public void PlaySoundtrack(string newSoundtrack) => AudioManager.Instance.PlaySoundtrack(newSoundtrack);
 
+    public void PlaySoundtrack(Soundtrack newSoundtrack) => AudioManager.Instance.PlaySoundtrack(newSoundtrack);
+
     public void PlaySoundEffect(string newSoundEffect) => AudioManager.Instance.PlaySoundEffect(newSoundEffect);
+    
+    public void PlaySoundEffect(SoundEffect newSoundEffect) => AudioManager.Instance.PlaySoundEffect(newSoundEffect);
 
 }
